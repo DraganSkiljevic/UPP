@@ -1,0 +1,28 @@
+<div class="midDiv">
+        <h3>Fill more information</h3>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxLex="25%">
+          </div>
+          <div fxLex="50%">
+            <form #f="ngForm" (ngSubmit)="onSubmit(f.value, f)" ngNativeValidate>
+                    <div *ngFor="let field of formFields" class="row">
+                            <label class="col-5" for={{field.id}}>{{field.label}}</label>
+                            <select name="{{field.id}}"  multiple ngModel *ngIf="field.type.name=='enum' && field.id=='reviewersl'">
+                            <option *ngFor="let category of reviewers" value={{category.id}}>
+                            {{category.name}} , {{category.surname}}
+                            </option>
+                            </select>
+                            <select name="{{field.id}}"  multiple ngModel *ngIf="field.type.name=='enum' && field.id=='editorsl'">
+                                        <option *ngFor="let cat of editors" value={{cat.id}}>
+                                        {{cat.name}},{{cat.surname}}  
+                                        </option>
+                                        </select>
+                    </div>                        
+                    <input type="submit">
+            </form>
+          </div>
+          <div fxLex="25%">
+          </div>
+    </div>
+    

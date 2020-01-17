@@ -1,0 +1,19 @@
+<div class="midDiv">
+    <h2>Prijava</h2>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center">
+    <div fxLex="25%">
+    </div>
+    <div fxLex="50%">
+        <input  placeholder="Enter username" [(ngModel)]="username"
+        [ngModelOptions]="{standalone: true}">
+        <input  class="ml-2" type="password" [(ngModel)]="password"
+        [ngModelOptions]="{standalone: true}" placeholder="Enter password" >
+        <div class="midDiv">
+            <button class="mt-2"color="primary" (click)="login()">Prijavi se</button>
+        </div>
+        <div><a href="signup"> Register</a></div>
+    </div>
+    <div fxLex="25%">
+    </div>
+</div>
